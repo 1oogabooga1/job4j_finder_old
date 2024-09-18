@@ -1,13 +1,10 @@
 package search;
 
 import java.io.BufferedOutputStream;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,7 +12,7 @@ public class SearchingFiles {
 
     static FilesVisitor visitor = new FilesVisitor();
 
-    public static void find(ArgsName args) throws IOException {
+    public static void find(ArgsName args) {
         String directory = args.get("d");
         String file = args.get("n");
         String type = args.get("t");
@@ -31,7 +28,6 @@ public class SearchingFiles {
                     }
                 }
             }
-
             if ("mask".equals(type)) {
                 if (file.contains(".")) {
                     String[] parts = file.split("\\.", 2);
@@ -64,7 +60,7 @@ public class SearchingFiles {
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         ArgsName argsName = ArgsName.of(args);
         find(argsName);
     }
