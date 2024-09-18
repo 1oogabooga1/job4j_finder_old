@@ -28,6 +28,7 @@ public class SearchingFiles {
                     }
                 }
             }
+
             if ("mask".equals(type)) {
                 if (file.contains(".")) {
                     String[] parts = file.split("\\.", 2);
