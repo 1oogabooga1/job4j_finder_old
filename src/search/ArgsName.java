@@ -20,6 +20,7 @@ public class ArgsName {
             if (validate(arg, keyValue)) {
                 values.put(keyValue[0].substring(1), keyValue[1]);
             }
+
         }
     }
 
